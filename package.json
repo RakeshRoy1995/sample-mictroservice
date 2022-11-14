@@ -1,0 +1,27 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd gateway && npm start\" \"cd books && npm start\" \"cd customers && npm start\" \"cd orders && npm start\"",
+    "dev": "concurrently \"cd gateway && npm start\" \"cd books && npm run dev\" \"cd customers && npm run dev\" \"cd orders && npm run dev\"",
+    "install": "concurrently \"cd gateway && npm start\" \"cd books && npm i\" \"cd customers && npm i\" \"cd orders && npm i\"",
+    "postinstall": "mongo index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fast-gateway": "^3.4.2",
+    "helmet": "^6.0.0",
+    "http-proxy": "^1.18.1",
+    "mongoose": "^6.7.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
+}
